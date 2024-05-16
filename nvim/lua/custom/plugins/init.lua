@@ -3,7 +3,24 @@
 --
 -- See the kickstart.nvim README for more information
 return {
+	{ "github/copilot.vim" },
 	{ "rose-pine/neovim", name = "rose-pine-moon" },
+	{
+		"stevearc/oil.nvim",
+		event = { "VimEnter */*,.*", "BufNew */*,.*" },
+
+		opts = {
+			default_file_explorer = true,
+			view_options = {
+				show_hidden = true,
+			},
+		},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		keys = {
+			{ "-", "<cmd>Oil<CR>" },
+		},
+	},
 	{
 		"alexghergh/nvim-tmux-navigation",
 		config = function()
